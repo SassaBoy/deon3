@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deon Gewers - Software Engineer | AI Specialist</title>
+        <!-- Favicon -->
+        <link href="/img/Gewers1.v1.jpg" rel="icon">
+    <style>
+        body {
+            font-family: 'Your Preferred Font', sans-serif;
+            background-color: #f8f9fa;
+            /* Light gray background */
+            color: #333333;
+            /* Dark text color */
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            /* White container background */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            /* Shadow effect */
+            border-radius: 10px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: #007bff;
+            /* Blue header color */
+            font-size: 2em;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .sections {
+            margin-top: 30px;
+        }
+
+        /* ... (previous styles) */
+
+.category-box {
+    background-color: #f8d7da;
+    /* Red category box background color */
+    border: 1px solid #e0a1a5;
+    /* Red category box border color */
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.category-box:hover {
+    background-color: #f0c2c7;
+    /* Lighter red on hover */
+}
+
+/* ... (rest of the styles) */
+
+        .category-box h2 {
+            color: #dc3545;
+            /* Red category header color */
+            margin-top: 0;
+            font-size: 1.5em;
+        }
+
+        .article-link {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            color: #007bff;
+            /* Blue link color */
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+
+        .article-link::before {
+            content: '\2192';
+            /* Unicode right arrow character */
+            margin-right: 10px;
+            font-size: 1.5em;
+            color: #007bff;
+        }
+
+        .sections-content {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Hello Friend! 👋</h1>
+            <p>Thank you for signing up for my newsletter! You will now receive my coding insights and tips three times a week (Tuesdays, Thursdays, and Fridays).</p>
+            <p>This newsletter is your go-to source for coding tips, the latest tech trends, and featured coding projects.</p>
+            <p>The first email will be hitting your inbox shortly. Meanwhile, explore some of my featured content below. Happy coding!</p>
+        </div>
+
+
+
+<div class="sections">
+    <% Object.entries(categorizedArticles).forEach(([category, articles]) => { %>
+        <div class="category-box">
+            <h2><%= category %></h2>
+            <div class="sections-content">
+                <% articles.forEach(article => { %>
+                    <a href="/article/<%= article._id %>" class="article-link"><%= article.title %></a>
+                <% }); %>
+            </div>
+        </div>
+    <% }); %>
+</div>
+
+<!-- ... (existing HTML code) -->
+
+    </div>
+</body>
+
+</html>

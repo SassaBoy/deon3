@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Favicon -->
+    <link href="/img/Gewers1.v1.jpg" rel="icon">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-xxx" crossorigin="anonymous" />
+        <script src="https://code.responsivevoice.org/responsivevoice.js"></script>
+    <title>Deon Gewers - Software Engineer | AI Specialist</title>
+    <style>
+        body {
+            font-family: 'Your Preferred Font', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+         /* Banner Styles */
+  .banner-container {
+    overflow: hidden;
+    position: relative;
+  }
+
+  .banner-image {
+    width: 100%;
+    height: 300px; /* Adjust the height as needed */
+    object-fit: cover;
+    position: relative;
+    transform: translateY(0); /* Change translateY to 0 or adjust as needed */
+  }
+
+  .banner-slice {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(to bottom, transparent, #f0f0f0); /* Add a gradient slice effect */
+  }
+   /* Additional Styles for Small Screens */
+   @media only screen and (max-width: 600px) {
+    .banner-image {
+      height: 200px; /* Adjust the height for small screens */
+    }
+
+    .info-box-header-container {
+      width: 80%; /* Adjust the width for small screens */
+    }
+
+    .music-player-app {
+      flex-direction: column; /* Stack music player controls vertically on small screens */
+      align-items: center;
+      
+    }
+
+    .music-player-controls {
+      margin-bottom: 10px;
+    }
+  }
+        .article {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .article-title {
+            color: black;
+            text-align: center;
+        }
+
+        .author-info {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .avatar-container {
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+        }
+
+        .avatar {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+        }
+
+        .author-name {
+            color: black;
+            font-size: 13px;
+        }
+
+        .written-by {
+            font-style: italic;
+            margin-right: 5px;
+        }
+
+        .author-caps {
+            text-transform: uppercase;
+        }
+
+        .info-box {
+            margin-top: 20px;
+            border: 1px solid #3498db;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .info-box-header-container {
+            background-color: #3498db;
+            padding: 7px;
+            margin-bottom: 6px;
+            width: 20%;
+            height: 30px;
+            font-size: 9px;
+            margin-left: 20px;
+            margin-top: -10px;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .info-box-header {
+            text-align: center;
+            color: #fff;
+            margin: 0;
+        }
+
+        .info-box-content {
+            padding: 15px;
+        }
+
+        .info-box-content p {
+            margin: 0;
+            margin-bottom: 10px;
+            line-height: 1.6;
+            display: flex;
+            align-items: center;
+        }
+
+        .info-box-content i {
+            margin-right: 10px;
+            color: #3498db;
+        }
+
+        .article-section {
+            display: flex;
+            flex-direction: column;
+            margin-top: 20px;
+        }
+
+        .image-square {
+            width: 100%;
+        }
+
+        .section-image {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .music-player-app {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #3498db;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Slightly darker shadow */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #ecf0f1; /* Lighter text color */
+    border-color: rgba(0, 0, 0, 0.2);
+  }
+
+  .music-player-controls {
+    display: flex;
+    align-items: center;
+  }
+
+  .music-player-controls button {
+    background-color: transparent;
+    border: none;
+    color: #ecf0f1; /* Lighter icon color */
+    font-size: 24px;
+    cursor: pointer;
+    transition: transform 0.3s; /* Add a smooth transition effect */
+  }
+
+  .music-player-controls button:hover {
+    transform: scale(1.2); /* Enlarge the button on hover */
+  }
+
+  .music-progress {
+    flex: 1;
+    height: 8px;
+    background-color: #ecf0f1; /* Lighter progress bar background color */
+    border-radius: 4px;
+    margin: 0 10px;
+    position: relative;
+  }
+
+  .music-progress-bar {
+    height: 100%;
+    width: 0; /* Initially set to 0 */
+    background-color: #3498db; /* Highlighted progress bar color */
+    border-radius: 4px;
+    transition: width 0.3s; /* Add a smooth transition effect */
+  }
+
+  .music-duration {
+    font-size: 14px;
+  }
+
+  .text-to-speech-btn {
+    background-color: #3498db; /* Highlighted button color */
+    color: #fff;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+    transition: background-color 0.3s; /* Add a smooth transition effect */
+  }
+
+  .text-to-speech-btn:hover {
+    background-color: #217dbb; /* Darker color on hover */
+  }
+/* Content Styles */
+.article-content {
+    margin-top: 20px;
+  }
+
+  .article-content h2 {
+    font-weight: bold;
+    font-size: 24px;
+    color: black;
+    margin-bottom: 10px;
+  }
+
+  .article-content p {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.6;
+    margin-top: 10px;
+  }
+
+  .article-content blockquote {
+    background-color: #f9f9f9;
+    border-left: 10px solid #3498db;
+    padding: 10px;
+    margin: 10px 0;
+  }
+
+  /* Mobile Styles */
+  @media only screen and (max-width: 600px) {
+    .banner-image {
+      height: 200px; /* Adjust the height for better visibility on mobile */
+    }
+
+    .article-title {
+      font-size: 24px; /* Increase the font size for better readability */
+    }
+
+    .info-box-header-container {
+      width: 60%; /* Make 'Today at a Glance' wider on smaller screens */
+    }
+
+    .article-content h2 {
+      font-size: 20px; /* Adjust the headline font size for better readability on mobile */
+    }
+
+    .article-content p {
+      font-size: 16px; /* Adjust the paragraph font size for better readability on mobile */
+    }
+  }
+
+        .info-box-header h2 {
+            font-weight: normal;
+        }
+
+        .text-to-speech-btn {
+            background-color: #3498db;
+            color: #fff;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Banner Container -->
+    <div class="banner-container">
+        <img src="/img/1.png" alt="Banner Image" class="banner-image">
+        <div class="banner-slice"></div>
+    </div>
+
+    <article class="article">
+        <h1 class="article-title"><%= article.title %></h1>
+
+        <div class="author-info">
+            <div class="avatar-container">
+                <img src="/img/joycie.jpeg" alt="Author Avatar" class="avatar">
+            </div>
+            <p class="author-name"><span class="written-by">Written by</span> <span
+                    class="author-caps"><%= article.author %> | <%= article.category %></span></p>
+        </div>
+
+        <div class="info-box">
+            <div class="info-box-header-container">
+                <div class="info-box-header">
+                    <h2>TODAY AT A GLANCE</h2>
+                </div>
+            </div>
+
+            <div class="info-box-content">
+                <!-- Splitting description into paragraphs -->
+                <% article.description.split('\n').forEach((paragraph) => { %>
+                <p><i class="fa fa-arrow-right"></i> <%= paragraph %></p>
+                <% }); %>
+            </div>
+        </div>
+
+        <div class="article-section">
+            <div class="image-square">
+                <img src="<%= article.image %>" alt="Article Image" class="section-image">
+            </div>
+            <!-- Add your music player code here if needed -->
+        </div>
+
+        <div class="music-player-app">
+            <div class="music-player-controls">
+                <button id="playPauseButton">&#9658;</button>
+                <div class="music-progress">
+                    <div class="music-progress-bar"></div>
+                </div>
+            </div>
+           
+        </div>
+
+        <div class="article-content">
+          <!-- Displaying article content -->
+          <%
+          let isIntroductionConclusion = false;
+        
+          article.content.split('\n').forEach((paragraph) => {
+            const trimmedParagraph = paragraph.trim();
+        
+            if (trimmedParagraph === 'Introduction' || trimmedParagraph === 'Conclusion') {
+              // Style Introduction and Conclusion
+          %>
+              <p style="margin-top: 10px; font-weight: bold; font-size: 28px; color: rgba(35, 106, 239, 0.95);"><%= trimmedParagraph %></p>
+          <%
+              isIntroductionConclusion = true;
+            } else {
+              // Regular text
+              let fontSize = isIntroductionConclusion ? '24px' : '18px';
+              let fontWeight = isIntroductionConclusion ? 'bold' : 'normal';
+        
+              // Check for colon (:)
+              const colonIndex = trimmedParagraph.indexOf(':');
+              if (colonIndex !== -1) {
+                // Apply styles directly to the paragraph before and after colon
+          %>
+                <p style="margin-top: 10px; font-weight: bold; font-size: 24px; color: rgba(35, 106, 239, 0.95);"><%= trimmedParagraph.slice(0, colonIndex + 1) %></p>
+                <p style="margin-top: 10px; font-weight: normal; font-size: 18px; color: black;"><%= trimmedParagraph.slice(colonIndex + 1).trim() %></p>
+          <%
+              } else {
+                // Apply styles directly to the paragraph
+          %>
+                <p style="margin-top: 10px; font-weight: <%= fontWeight %>; font-size: <%= fontSize %>px; color: black;"><%= trimmedParagraph %></p>
+
+          <%
+              }
+              isIntroductionConclusion = false;
+            }
+          }); 
+          %>
+        </div>
+        
+        
+        
+    </article>
+
+    <script>
+      const audio = new Audio();
+      const playPauseButton = document.getElementById('playPauseButton');
+      const musicProgressBar = document.querySelector('.music-progress-bar');
+      const musicDuration = document.querySelector('.music-duration');
+    
+      let isSpeechInProgress = false;
+      let speechPosition = 0;
+    
+      playPauseButton.addEventListener('click', () => {
+        if (audio.paused) {
+          audio.play();
+          playPauseButton.innerHTML = '&#9646;&#9646;'; // Pause icon
+    
+          // Check if speech is in progress and continue from the last position
+          if (isSpeechInProgress) {
+            responsiveVoice.resume();
+          } else {
+            // Use ResponsiveVoice to read the article content
+            const articleContent = document.querySelector('.article-content').innerText;
+            responsiveVoice.speak(articleContent, 'UK English Female', {
+              rate: 1, // Speed of speech
+              onstart: () => {
+                isSpeechInProgress = true;
+              },
+              onend: () => {
+                isSpeechInProgress = false;
+                speechPosition = 0;
+              },
+              onpause: () => {
+                speechPosition = responsiveVoice.getPosition();
+              },
+            });
+          }
+        } else {
+          audio.pause();
+          playPauseButton.innerHTML = '&#9658;'; // Play icon
+    
+          // Pause the speech and store the current position
+          if (isSpeechInProgress) {
+            responsiveVoice.pause();
+          }
+        }
+      });
+    
+      audio.addEventListener('timeupdate', () => {
+        const progressPercentage = (audio.currentTime / audio.duration) * 100;
+        musicProgressBar.style.width = `${progressPercentage}%`;
+    
+        const minutes = Math.floor(audio.currentTime / 60);
+        const seconds = Math.floor(audio.currentTime % 60);
+        musicDuration.textContent = `${minutes}:${seconds}`;
+      });
+    </script>
+    
+
+</body>
+
+</html>
